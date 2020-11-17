@@ -36,9 +36,12 @@ const budget = {
 };
 
 function generateTable(b) {
+  // eslint-disable-next-line no-undef
   const p = document.getElementById('list');
   p.innerHTML = '';
-  for (var i = 0; i < b.length; i++) {
+  // eslint-disable-next-line no-plusplus
+  for (let i = 0; i < b.length; i++) {
+    // eslint-disable-next-line no-undef
     const div = document.createElement('div');
     div.innerHTML = `${b[i].title} - ${b[i].budget}`;
     p.appendChild(div);
@@ -47,24 +50,28 @@ function generateTable(b) {
 
 generateTable(budget.myBudget);
 
+// eslint-disable-next-line no-unused-vars
 function aZ() {
   const newArray = [...budget.myBudget];
   newArray.sort((a, b) => (a.title > b.title ? 1 : -1));
   generateTable(newArray);
 }
 
+// eslint-disable-next-line no-unused-vars
 function zA() {
   const newArray = [...budget.myBudget];
   newArray.sort((a, b) => (a.title < b.title ? 1 : -1));
   generateTable(newArray);
 }
 
+// eslint-disable-next-line no-unused-vars
 function biggerBudget() {
   const newArray = [...budget.myBudget];
   newArray.sort((a, b) => (a.budget < b.budget ? 1 : -1));
   generateTable(newArray);
 }
 
+// eslint-disable-next-line no-unused-vars
 function smallerBudget() {
   const newArray = [...budget.myBudget];
   newArray.sort((a, b) => (a.budget > b.budget ? 1 : -1));
